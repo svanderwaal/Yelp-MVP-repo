@@ -28,7 +28,7 @@
 <% @restaurant.reviews.each do |review| %>
   <div style="border: solid 1px gray">
     <p><%= review.content %></p>
-    <%# <%= link_to "Delete", review_path(review), method: :delete, data: {confirm: "Are you sure?"} %> %>
+    <%# <%= link_to "Delete", review_path(review), method: :delete, data: {confirm: "Are you sure?"} %>
   </div>
 <% end %>
 <%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %> |
