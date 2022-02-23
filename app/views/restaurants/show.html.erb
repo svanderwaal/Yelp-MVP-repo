@@ -1,0 +1,36 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<p>
+  <strong>Phone Number</strong>
+  <%= @restaurant.phone_number %>
+</p>
+
+<p>
+  <strong>Category</strong>
+  <%= @restaurant.category %>
+</p>
+
+<h4>Reviews</h4>
+<% if @restaurant.reviews.empty? %>
+  <p>There are no reviews yet for this restaurant</p>
+<% end %>
+<% @restaurant.reviews.each do |review| %>
+  <div style="border: solid 1px gray">
+    <p><%= review.content %></p>
+    <%= link_to "Delete", review_path(review), method: :delete, data: {confirm: "Are you sure?"} %>
+  </div>
+<% end %>
+<%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>

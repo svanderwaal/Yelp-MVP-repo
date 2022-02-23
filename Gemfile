@@ -52,3 +52,4 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
 gem 'rspec-rails', group: [ :test ]
 gem 'rails-controller-testing', group: [ :test ]
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
